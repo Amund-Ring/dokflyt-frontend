@@ -1,0 +1,128 @@
+[
+  {
+    "name": "Aria",
+    "race": "Half-Elf",
+    "className": "Rogue",
+    "level": 5,
+    "createdAt": "2021-09-01"
+  },
+  {
+    "name": "Marcus",
+    "race": "Human",
+    "className": "Paladin",
+    "level": 1,
+    "createdAt": "2021-09-15"
+  },
+  {
+    "name": "Tessa",
+    "race": "Dwarf",
+    "className": "Bard",
+    "level": 8,
+    "createdAt": "2021-09-22"
+  },
+  {
+    "name": "Erik",
+    "race": "Dragonborn",
+    "className": "Sorcerer",
+    "level": 3,
+    "createdAt": "2021-10-01"
+  },
+  {
+    "name": "Lila",
+    "race": "Tiefling",
+    "className": "Warlock",
+    "level": 7,
+    "createdAt": "2021-10-07"
+  },
+  {
+    "name": "Niamh",
+    "race": "Elf",
+    "className": "Ranger",
+    "level": 2,
+    "createdAt": "2021-10-15"
+  },
+  {
+    "name": "Tristan",
+    "race": "Half-Orc",
+    "className": "Fighter",
+    "level": 6,
+    "createdAt": "2021-10-23"
+  },
+  {
+    "name": "Ava",
+    "race": "Halfling",
+    "className": "Cleric",
+    "level": 4,
+    "createdAt": "2021-11-01"
+  },
+  {
+    "name": "Benjamin",
+    "race": "Human",
+    "className": "Wizard",
+    "level": 9,
+    "createdAt": "2021-11-09"
+  },
+  {
+    "name": "Emma",
+    "race": "Elf",
+    "className": "Druid",
+    "level": 12,
+    "createdAt": "2021-11-15"
+  },
+  {
+    "name": "Olivia",
+    "race": "Half-Elf",
+    "className": "Monk",
+    "level": 11,
+    "createdAt": "2021-11-22"
+  },
+  {
+    "name": "Noah",
+    "race": "Human",
+    "className": "Barbarian",
+    "level": 14,
+    "createdAt": "2021-11-30"
+  },
+  {
+    "name": "Liam",
+    "race": "Dwarf",
+    "className": "Fighter",
+    "level": 15,
+    "createdAt": "2021-12-07"
+  },
+  {
+    "name": "Mia",
+    "race": "Dragonborn",
+    "className": "Paladin",
+    "level": 13,
+    "createdAt": "2021-12-15"
+  },
+  {
+    "name": "William",
+    "race": "Tiefling",
+    "className": "Warlock",
+    "level": 17,
+    "createdAt": "2021-12-23"
+  },
+  {
+    "name": "Sophia",
+    "race": "Elf",
+    "className": "Cleric",
+    "level": 16,
+    "createdAt": "2022-01-01"
+  },
+  {
+    "name": "James",
+    "race": "Half-Orc",
+    "className": "Ranger",
+    "level": 19,
+    "createdAt": "2022-01-09"
+  },
+  {
+    "name": "Emily",
+    "race": "Halfling",
+    "className": "Rogue",
+    "level": 18,
+    "createdAt": "2022-01-15"
+  }
+]
