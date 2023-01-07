@@ -1,31 +1,49 @@
 <template>
   <div class="flex h-full min-h-screen w-screen flex-col items-center bg-blue-100 py-32">
-    <div class="w-9/12 overflow-hidden rounded-lg border-2 border-slate-300">
-      <div class="flex h-24 w-full gap-x-4 border-b border-slate-400 bg-white p-6">
+    <div class="w-9/12 overflow-hidden rounded-lg border-2 border-slate-400">
+      <div class="flex h-28 w-full gap-x-4 border-b-2 border-slate-300 bg-white p-8">
         <input
           type="text"
           v-model="search"
           placeholder="🔎   Search"
-          class="w-36 rounded-lg border-2 border-slate-300 px-3 text-center text-sm outline-none focus:border-blue-300 focus:ring-blue-100"
+          class=" rounded-lg border-2 border-slate-300 px-3 text-center text-sm outline-none focus:border-blue-300 focus:ring-blue-100"
           onfocus="this.placeholder=''"
           onblur="this.placeholder='🔎   Search name'"
         />
 
-        <DropdownMenu v-model="selectedRace" :options="raceOptions" />
+        <!-- <DropdownMenu v-model="selectedRace" :options="raceOptions" /> -->
 
-        <!-- <select
-          v-model="selectedRace"
-          class="h-full w-full rounded-lg border-2 border-gray-300 bg-gray-50 p-2.5 text-center text-sm text-gray-900 focus:border-blue-300 focus:ring-blue-100"
-        >
-          <option v-for="option in raceOptions" :value="option">
-            {{ option }}
-          </option>
-        </select> -->
+        <!-- Dropdown menu for races -->
+        <div class="h-full grow">
+          <select
+            v-model="selectedRace"
+            class="h-full w-full rounded-lg border-2 border-gray-300 bg-gray-50 p-2.5 text-center text-sm text-gray-900 focus:border-blue-300 focus:ring-blue-100 cursor-pointer"
+          >
+            <option value selected>Select race</option>
+            <option v-for="option in raceOptions">
+              {{ option }}
+            </option>
+          </select>
+        </div>
 
-        <div>Selected race: {{ selectedRace }}</div>
+        <!-- Dropdown menu for classes -->
+        <div class="h-full grow">
+          <select
+            v-model="selectedClass"
+            class="h-full w-full rounded-lg border-2 border-gray-300 bg-gray-50 p-2.5 text-center text-sm text-gray-900 focus:border-blue-300 focus:ring-blue-100 cursor-pointer"
+          >
+            <option value selected>Select class</option>
+            <option v-for="option in classOptions">
+              {{ option }}
+            </option>
+          </select>
+        </div>
+
+
+
       </div>
 
-      <CharacterTable :characters="filteredCharacters" />
+      <CharacterTable :characters="filteredCharacters" :sortBy="sortBy" :sortDirection="sortDirection" />
     </div>
   </div>
 </template>
@@ -54,8 +72,10 @@
       return {
         search: '',
         characters: characterData,
-        // raceOptions: ['Human', 'Dwarf', 'Elf'],
-        selectedRace: null
+        selectedRace: '',
+        selectedClass: '',
+        sortBy: 'name',
+        sortDirection: 'ascending'
       };
     },
     computed: {
@@ -63,7 +83,11 @@
         let filteredChars = this.characters;
 
         if (this.selectedRace) {
-          filteredChars = filteredChars.filter(char => char.race === this.selectedRace)
+          filteredChars = filteredChars.filter(char => char.race === this.selectedRace);
+        }
+
+        if (this.selectedClass) {
+          filteredChars = filteredChars.filter(char => char.className === this.selectedClass);
         }
 
         if (this.search) {
@@ -81,6 +105,14 @@
         });
         const racesWithoutDuplicates = [...new Set(races)];
         return racesWithoutDuplicates.sort();
+      },
+      classOptions(): String[] {
+        const classes: String[] = [];
+        this.characters.forEach(character => {
+          classes.push(character.className);
+        });
+        const classesWithoutDuplicates = [...new Set(classes)];
+        return classesWithoutDuplicates.sort();
       }
     }
   });
