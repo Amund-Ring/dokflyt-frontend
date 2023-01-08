@@ -10,6 +10,7 @@
           <th
             @click="setSort('name')"
             class="cursor-pointer select-none border-b-2 border-slate-300 py-5 px-5 text-left font-bold text-slate-800"
+            :class="getTextColor('name')"
           >
             Name
             <SortIcon
@@ -21,6 +22,7 @@
           <th
             @click="setSort('race')"
             class="cursor-pointer select-none border-b-2 border-slate-300 py-5 px-5 text-left font-bold text-slate-800"
+            :class="getTextColor('race')"
           >
             Race
             <SortIcon
@@ -32,6 +34,7 @@
           <th
             @click="setSort('className')"
             class="cursor-pointer select-none border-b-2 border-slate-300 py-5 px-5 text-left font-bold text-slate-800"
+            :class="getTextColor('className')"
           >
             Class
             <SortIcon
@@ -43,6 +46,7 @@
           <th
             @click="setSort('level')"
             class="cursor-pointer select-none border-b-2 border-slate-300 py-5 px-5 pr-8 text-center font-bold text-slate-800"
+            :class="getTextColor('level')"
           >
             Level
             <SortIcon
@@ -54,6 +58,8 @@
           <th
             @click="setSort('createdAt')"
             class="cursor-pointer select-none border-b-2 border-slate-300 py-5 px-5 text-left font-bold text-slate-800"
+            :class="getTextColor('createdAt')"
+
           >
             Created At
             <SortIcon
@@ -119,6 +125,13 @@
           this.sortBy = categoryName;
           this.sortDirection = 'ascending'
         }
+      },
+      getTextColor(categoryName: String): String {
+        if (categoryName === this.sortBy) {
+          return 'text-green-600'
+        }
+
+        return 'text-slate-700'
       }
     },
     computed: {
