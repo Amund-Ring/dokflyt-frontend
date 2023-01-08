@@ -43,7 +43,7 @@
 
       </div>
 
-      <CharacterTable :characters="filteredCharacters" :sortBy="sortBy" :sortDirection="sortDirection" />
+      <CharacterTable :characters="filteredCharacters" />
     </div>
   </div>
 </template>
@@ -55,7 +55,7 @@
   import characterData from './data/characterData.json';
 
   interface Character {
-    name: string;
+    name: string;   
     race: string;
     className: string;
     level: number;
@@ -74,12 +74,12 @@
         characters: characterData,
         selectedRace: '',
         selectedClass: '',
-        sortBy: 'name',
-        sortDirection: 'ascending'
+        // sortBy: 'name',
+        // sortDirection: 'ascending'
       };
     },
     computed: {
-      filteredCharacters(): Character[] {
+      filteredCharacters(): Array<Character> {
         let filteredChars = this.characters;
 
         if (this.selectedRace) {
@@ -98,16 +98,16 @@
 
         return filteredChars;
       },
-      raceOptions(): String[] {
-        const races: String[] = [];
+      raceOptions(): string[] {
+        const races: string[] = [];
         this.characters.forEach(character => {
           races.push(character.race);
         });
         const racesWithoutDuplicates = [...new Set(races)];
         return racesWithoutDuplicates.sort();
       },
-      classOptions(): String[] {
-        const classes: String[] = [];
+      classOptions(): string[] {
+        const classes: string[] = [];
         this.characters.forEach(character => {
           classes.push(character.className);
         });
