@@ -4,9 +4,9 @@ import App from './App.vue'
 import './index.css'
 
 import { OhVueIcon, addIcons } from "oh-vue-icons";
-import { HiSelector, BiChevronUp, BiChevronDown } from "oh-vue-icons/icons";
+import { HiSelector, BiChevronUp, BiChevronDown, BiX } from "oh-vue-icons/icons";
 
-addIcons(HiSelector, BiChevronUp, BiChevronDown);
+addIcons(HiSelector, BiChevronUp, BiChevronDown, BiX);
 
 const app = createApp(App);
 app.component("v-icon", OhVueIcon);

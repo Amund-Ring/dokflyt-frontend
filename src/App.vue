@@ -6,7 +6,7 @@
           type="text"
           v-model="search"
           placeholder="🔎   Search"
-          class=" rounded-lg border-2 border-slate-300 px-3 text-center text-sm outline-none focus:border-blue-300 focus:ring-blue-100"
+          class="rounded-lg border-2 border-slate-300 px-3 text-center text-sm outline-none focus:border-blue-300 focus:ring-blue-100"
           onfocus="this.placeholder=''"
           onblur="this.placeholder='🔎   Search name'"
         />
@@ -17,7 +17,7 @@
         <div class="h-full grow">
           <select
             v-model="selectedRace"
-            class="h-full w-full rounded-lg border-2 border-gray-300 bg-gray-50 p-2.5 text-center text-sm text-gray-900 focus:border-blue-300 focus:ring-blue-100 cursor-pointer"
+            class="h-full w-full cursor-pointer rounded-lg border-2 border-gray-300 bg-gray-50 p-2.5 text-center text-sm text-gray-900 focus:border-blue-300 focus:ring-blue-100"
           >
             <option value selected>Select race</option>
             <option v-for="option in raceOptions">
@@ -30,7 +30,7 @@
         <div class="h-full grow">
           <select
             v-model="selectedClass"
-            class="h-full w-full rounded-lg border-2 border-gray-300 bg-gray-50 p-2.5 text-center text-sm text-gray-900 focus:border-blue-300 focus:ring-blue-100 cursor-pointer"
+            class="h-full w-full cursor-pointer rounded-lg border-2 border-gray-300 bg-gray-50 p-2.5 text-center text-sm text-gray-900 focus:border-blue-300 focus:ring-blue-100"
           >
             <option value selected>Select class</option>
             <option v-for="option in classOptions">
@@ -39,8 +39,13 @@
           </select>
         </div>
 
-
-
+        <!-- Reset button -->
+        <div
+          @click="resetSelection"
+          class="flex aspect-square h-full items-center justify-center rounded-lg border-2 border-slate-300 bg-slate-50 hover:bg-red-200 cursor-pointer"
+        >
+          <v-icon name="bi-x"  scale="1.4"></v-icon>
+        </div>
       </div>
 
       <CharacterTable :characters="filteredCharacters" />
@@ -55,7 +60,7 @@
   import characterData from './data/characterData.json';
 
   interface Character {
-    name: string;   
+    name: string;
     race: string;
     className: string;
     level: number;
@@ -70,13 +75,20 @@
     },
     data() {
       return {
-        search: '',
         characters: characterData,
+        search: '',
         selectedRace: '',
-        selectedClass: '',
+        selectedClass: ''
         // sortBy: 'name',
         // sortDirection: 'ascending'
       };
+    },
+    methods: {
+      resetSelection() {
+        this.search = '';
+        this.selectedRace = '';
+        this.selectedClass = '';
+      }
     },
     computed: {
       filteredCharacters(): Array<Character> {
@@ -87,7 +99,9 @@
         }
 
         if (this.selectedClass) {
-          filteredChars = filteredChars.filter(char => char.className === this.selectedClass);
+          filteredChars = filteredChars.filter(
+            char => char.className === this.selectedClass
+          );
         }
 
         if (this.search) {
