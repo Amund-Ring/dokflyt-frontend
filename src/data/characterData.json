@@ -124,5 +124,96 @@
     "className": "Rogue",
     "level": 18,
     "createdAt": "2022-01-15"
-  }
+  },
+  {
+    "name": "Samuel",
+    "race": "Human",
+    "className": "Fighter",
+    "level": 10,
+    "createdAt": "2021-12-01"
+    },
+    {
+    "name": "Chloe",
+    "race": "Halfling",
+    "className": "Bard",
+    "level": 9,
+    "createdAt": "2022-01-01"
+    },
+    {
+    "name": "Oliver",
+    "race": "Human",
+    "className": "Wizard",
+    "level": 8,
+    "createdAt": "2022-01-15"
+    },
+    {
+    "name": "Abigail",
+    "race": "Elf",
+    "className": "Druid",
+    "level": 7,
+    "createdAt": "2022-02-01"
+    },
+    {
+    "name": "Mason",
+    "race": "Human",
+    "className": "Barbarian",
+    "level": 6,
+    "createdAt": "2022-02-15"
+    },
+    {
+    "name": "Isabella",
+    "race": "Half-Elf",
+    "className": "Monk",
+    "level": 5,
+    "createdAt": "2022-03-01"
+    },
+    {
+    "name": "Ethan",
+    "race": "Human",
+    "className": "Paladin",
+    "level": 4,
+    "createdAt": "2022-03-15"
+    },
+    {
+    "name": "Avery",
+    "race": "Halfling",
+    "className": "Cleric",
+    "level": 3,
+    "createdAt": "2022-04-01"
+    },
+    {
+    "name": "Sebastian",
+    "race": "Dwarf",
+    "className": "Fighter",
+    "level": 2,
+    "createdAt": "2022-04-15"
+    },
+    {
+    "name": "Elizabeth",
+    "race": "Elf",
+    "className": "Ranger",
+    "level": 1,
+    "createdAt": "2022-05-01"
+    },
+    {
+    "name": "Alexander",
+    "race": "Human",
+    "className": "Rogue",
+    "level": 20,
+    "createdAt": "2022-05-15"
+    },
+    {
+    "name": "Ella",
+    "race": "Half-Elf",
+    "className": "Bard",
+    "level": 19,
+    "createdAt": "2022-06-01"
+    },
+    {
+    "name": "Michael",
+    "race": "Human",
+    "className": "Wizard",
+    "level": 18,
+    "createdAt": "2022-06-15"
+    }
 ]
