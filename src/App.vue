@@ -1,7 +1,7 @@
 <template>
-  <div class="flex h-full min-h-screen w-screen flex-col items-center bg-blue-100 py-32">
+  <div class="flex h-full min-h-screen w-screen flex-col items-center bg-blue-200 py-32">
     <div class="w-9/12 overflow-hidden rounded-lg border-2 border-slate-400">
-      <div class="flex h-28 w-full gap-x-4 border-b-2 border-slate-300 bg-white p-8">
+      <div class="flex h-28 w-full gap-x-4 border-b-2 border-slate-300 bg-blue-50 p-8">
         <input
           type="text"
           v-model="search"

@@ -9,7 +9,7 @@
         <tr>
           <th
             @click="setSort('name')"
-            class="cursor-pointer select-none border-b-2 border-slate-300 py-5 px-5 text-left font-bold text-slate-800"
+            class="cursor-pointer select-none border-b-2 border-slate-300 bg-slate-50 py-5 px-5 text-left font-bold"
             :class="getTextColor('name')"
           >
             Name
@@ -21,7 +21,7 @@
           </th>
           <th
             @click="setSort('race')"
-            class="cursor-pointer select-none border-b-2 border-slate-300 py-5 px-5 text-left font-bold text-slate-800"
+            class="cursor-pointer select-none border-b-2 border-slate-300 bg-slate-50 py-5 px-5 text-left font-bold"
             :class="getTextColor('race')"
           >
             Race
@@ -33,7 +33,7 @@
           </th>
           <th
             @click="setSort('className')"
-            class="cursor-pointer select-none border-b-2 border-slate-300 py-5 px-5 text-left font-bold text-slate-800"
+            class="cursor-pointer select-none border-b-2 border-slate-300 bg-slate-50 py-5 px-5 text-left font-bold"
             :class="getTextColor('className')"
           >
             Class
@@ -45,7 +45,7 @@
           </th>
           <th
             @click="setSort('level')"
-            class="cursor-pointer select-none border-b-2 border-slate-300 py-5 px-5 pr-8 text-center font-bold text-slate-800"
+            class="cursor-pointer select-none border-b-2 border-slate-300 bg-slate-50 py-5 px-5 pr-8 text-center font-bold"
             :class="getTextColor('level')"
           >
             Level
@@ -57,9 +57,8 @@
           </th>
           <th
             @click="setSort('createdAt')"
-            class="cursor-pointer select-none border-b-2 border-slate-300 py-5 px-5 text-left font-bold text-slate-800"
+            class="cursor-pointer select-none border-b-2 border-slate-300 bg-slate-50 py-5 px-5 text-left font-bold"
             :class="getTextColor('createdAt')"
-
           >
             Created At
             <SortIcon
@@ -123,15 +122,15 @@
             this.sortDirection === 'ascending' ? 'descending' : 'ascending';
         } else {
           this.sortBy = categoryName;
-          this.sortDirection = 'ascending'
+          this.sortDirection = 'ascending';
         }
       },
       getTextColor(categoryName: String): String {
         if (categoryName === this.sortBy) {
-          return 'text-green-600'
+          return 'text-green-600';
         }
 
-        return 'text-slate-700'
+        return 'text-slate-700';
       }
     },
     computed: {
