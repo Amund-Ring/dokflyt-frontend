@@ -1,9 +1,5 @@
 <template>
   <div class="w-full bg-white">
-    <!-- <div>Sorting by: {{ sortBy }}</div> -->
-    <!-- <HiSelector /> -->
-    <!-- <v-icon name="HiSelector" /> -->
-
     <table class="min-w-full">
       <thead>
         <tr>

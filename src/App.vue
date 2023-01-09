@@ -2,6 +2,7 @@
   <div class="flex h-full min-h-screen w-screen flex-col items-center bg-blue-200 py-32">
     <div class="w-9/12 overflow-hidden rounded-lg border-2 border-slate-400">
       <div class="flex h-28 w-full gap-x-4 border-b-2 border-slate-300 bg-blue-50 p-8">
+        <!-- Search box -->
         <input
           type="text"
           v-model="search"
@@ -10,8 +11,6 @@
           onfocus="this.placeholder=''"
           onblur="this.placeholder='🔎   Search name'"
         />
-
-        <!-- <DropdownMenu v-model="selectedRace" :options="raceOptions" /> -->
 
         <!-- Dropdown menu for races -->
         <div class="h-full grow">
@@ -42,9 +41,9 @@
         <!-- Reset button -->
         <div
           @click="resetSelection"
-          class="flex aspect-square h-full items-center justify-center rounded-lg border-2 border-slate-300 bg-slate-50 hover:bg-red-200 cursor-pointer"
+          class="flex aspect-square h-full cursor-pointer items-center justify-center rounded-lg border-2 border-slate-300 bg-slate-50 hover:bg-red-200"
         >
-          <v-icon name="bi-x"  scale="1.4"></v-icon>
+          <v-icon name="bi-x" scale="1.4"></v-icon>
         </div>
       </div>
 
@@ -56,7 +55,6 @@
 <script lang="ts">
   import { defineComponent } from 'vue';
   import CharacterTable from './components/CharacterTable.vue';
-  import DropdownMenu from './components/DropdownMenu.vue';
   import characterData from './data/characterData.json';
 
   interface Character {
@@ -71,7 +69,6 @@
     name: 'App',
     components: {
       CharacterTable,
-      DropdownMenu
     },
     data() {
       return {
@@ -79,8 +76,6 @@
         search: '',
         selectedRace: '',
         selectedClass: ''
-        // sortBy: 'name',
-        // sortDirection: 'ascending'
       };
     },
     methods: {
@@ -105,8 +100,8 @@
         }
 
         if (this.search) {
-          return filteredChars.filter(character =>
-            character.name.toLowerCase().includes(this.search.toLowerCase())
+          return filteredChars.filter(char =>
+            char.name.toLowerCase().includes(this.search.toLowerCase())
           );
         }
 
